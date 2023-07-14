@@ -63,8 +63,10 @@ local function readFile(dir, t)
     return data
 end
 
+local rodboxVersion = "0.0.1"
+
 if arg[1] == "--help" then
-    print([[rodbox is a cli for launching roblox studio on linux (with modifications)
+    print([[rodbox (]] .. rodboxVersion ..  [[) is a cli for launching roblox studio on linux (with modifications)
 usage: StudioPrefix=(/home/.../.local/share/grapejuice/prefixes/studio)/(studio) rodbox [options]
 
 options:
