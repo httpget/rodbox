@@ -1,0 +1,1 @@
+sudo cp ./bin/rodbox /bin/rodbox
