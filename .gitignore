@@ -1,4 +1,4 @@
 .vscode
-bin/rodbox
-tmp/modified.cpp
+bin
+tmp
 test.sh
