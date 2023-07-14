@@ -1,7 +1,9 @@
 # rodbox
 roblox studio launcher for linux (with modifications)<br>
 having `lua5.3` and `grapejuice` installed is the only requirement
-```rodbox (0.0.1) is a cli for launching roblox studio on linux (with modifications)
+```
+$ rodbox --help
+rodbox (0.0.1) is a cli for launching roblox studio on linux (with modifications)
 usage: StudioPrefix=(/home/.../.local/share/grapejuice/prefixes/studio)/(studio) rodbox [options]
 
 options:
