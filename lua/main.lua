@@ -110,13 +110,12 @@ local studioPrefix = os.getenv("StudioPrefix")
 local studioVersion = getVersion()
 
 if studioPrefix == nil then
-    err("StudioPrefix is undefined")
-    return
-else
-    if studioPrefix:gsub("%w+", "") == "" then
-        print("setting StudioPrefix to " .. home .. "/.local/share/grapejuice/prefixes/" .. studioPrefix )
-        studioPrefix = home .. "/.local/share/grapejuice/prefixes/" .. studioPrefix
-    end
+    err("StudioPrefix is undefined! defaulting to studio")
+    studioPrefix = "studio"
+end
+if studioPrefix:gsub("%w+", "") == "" then
+    print("setting StudioPrefix to " .. home .. "/.local/share/grapejuice/prefixes/" .. studioPrefix )
+    studioPrefix = home .. "/.local/share/grapejuice/prefixes/" .. studioPrefix
 end
 
 local versionsPath = studioPrefix .. "/drive_c/Program Files (x86)/Roblox/Versions/"
