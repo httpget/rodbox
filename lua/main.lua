@@ -74,7 +74,6 @@ options:
   --fflags                      define fflags,                            --fflags FFlagSimEnableDynamicMesh:true,DFIntUserHttpRequestsPerMinute:500
   --studio-args                 launch studio with specified arguments,   --studio-args "-task EditPlace -placeId 1818"
   --internal                    launch studio with internal permissions,  --internal
-  --disable-identity-checks     disable identity checks,                  --disable-identity-checks (this is insecure as it disables it for any scripts ran)
   --spoof-version               spoof studio's version,                   --spoof-version 0.583.2.5831071
 
   other:
@@ -196,11 +195,6 @@ while true do
     elseif key == "--internal" then
         settings.patches.internal = true
         settings.patch = true
-    elseif key == "--disable-identity-checks" then
-        settings.patches.disableIdentityChecks = true
-        settings.patch = true
-
-        warn("disabling identity checks is insecure as it disables it for any scripts ran")
     elseif key == "--verbose" then
     else
         err("unrecognized option " .. tostring(key))
@@ -231,19 +225,6 @@ fflagsJson = (fflagsJson ~= "{" and fflagsJson:sub(1,#fflagsJson-1) or "{") .. "
 
 if settings.patch then
     --local robloxStudio = readFile(executablePath, "rb")
-
-    if settings.patches.disableIdentityChecks then
-        local patched = false
-
-        robloxStudio = robloxStudio:gsub("\x85\xD2\x74\x4B\x48\x63", function()
-            patched = true
-            return "\xB0\x01\xC3\x90\x90\x90"
-        end)
-
-        if not patched then
-            err("failed to patch studio and disable identity checks! i suggest dming wyatt")
-        end
-    end
 
     if settings.patches.internal then
         local patched = false
