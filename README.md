@@ -12,7 +12,6 @@ options:
   --fflags                      define fflags,                            --fflags FFlagSimEnableDynamicMesh:true,DFIntUserHttpRequestsPerMinute:500
   --studio-args                 launch studio with specified arguments,   --studio-args "-task EditPlace -placeId 1818"
   --internal                    launch studio with internal permissions,  --internal
-  --disable-identity-checks     disable identity checks,                  --disable-identity-checks (this is insecure as it disables it for any scripts ran)
   --spoof-version               spoof studio's version,                   --spoof-version 0.583.2.5831071
 
   other:
