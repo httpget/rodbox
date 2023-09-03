@@ -1,5 +1,6 @@
 #include <lua5.3/lua.hpp>
 #include "iostream"
+// hi marduk
 
 int main(int argc, char** argv) {
     lua_State *L = luaL_newstate();
